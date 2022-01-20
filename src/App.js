@@ -1,11 +1,17 @@
 
 import './App.css';
+import Header from './components/Header';
 
 function App() {
-  return (
-    <div >
 
-    </div>
+  return (
+    <>
+      {/* header */}
+      <Header />
+      {/* searchbar */}
+      {/* trends navbar */}
+      {/* results */}
+    </>
   );
 }
 
