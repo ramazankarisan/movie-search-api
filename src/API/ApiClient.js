@@ -1,4 +1,5 @@
 import axios from "axios";
+import { requests } from "./requests";
 
 const movieListFetch = () => {
   let apiKey = process.env.REACT_APP_API_KEY,
