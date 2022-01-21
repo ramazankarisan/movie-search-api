@@ -1,6 +1,6 @@
-
 import './App.css';
 import Header from './components/Header';
+import NavbarTrends from './components/NavbarTrends';
 import SearchBar from './components/SearchBar';
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
       {/* searchbar */}
       <SearchBar />
       {/* trends navbar */}
+      <NavbarTrends />
       {/* results */}
     </>
   );
