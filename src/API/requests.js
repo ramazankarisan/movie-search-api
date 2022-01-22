@@ -1,11 +1,12 @@
+const apiKey = process.env.REACT_APP_API_KEY;
 export const requests = {
   fetchTrending: {
     title: "Trending",
-    url: "https://api.themoviedb.org/3/trending/movie/week?api_key=<<api_key>>"
+    url: `/trending/movie/week?api_key=${apiKey}`
   },
   fetchTopRated: {
     title: "Top Rated",
-    url: "ttps://api.themoviedb.org/3/movie/top_rated?api_key=<<api_key>>&language=en-US"
+    url: `/movie/top_rated?api_key=${apiKey}&language=en-US`
   },
   fetchUpcoming: {
     title: "Upcoming",
