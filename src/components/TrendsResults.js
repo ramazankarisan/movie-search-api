@@ -7,7 +7,7 @@ import { requests } from '../API/requests';
 const TrendsResults = () => {
   const { trend } = useParams();
   const [trends, setTrends] = useState([]);
-  console.log(trends);
+
   function getData() {
     let baseUrl = "https://api.themoviedb.org/3",
       URL = baseUrl + `${requests[trend].url}`;
