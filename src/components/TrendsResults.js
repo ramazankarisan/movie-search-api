@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import MovieListFetch from '../API/MovieListFetch';
 import { requests } from '../API/requests';
+import Thumbnail from './Thumbnail';
 
 const TrendsResults = () => {
   const { trend } = useParams();
@@ -20,10 +21,12 @@ const TrendsResults = () => {
     getData()
   }, [trend]);
 
-
+  console.log(trends);
   return <>
-    <h1 className='text-3xl text-white'>trends results</h1>
-  </>;
+    <div className='my-10 p-10 flex flex-col items-center md:grid md:grid-cols-2 xl:grid-cols-3  '>
+      {trends.map(result => <Thumbnail key={result.id} result={result} />)}
+    </div>
+  </>
 };
 
 export default TrendsResults;
