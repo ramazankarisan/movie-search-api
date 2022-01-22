@@ -1,12 +1,40 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import MovieContext from './MovieContext';
 
 const MovieState = (props) => {
-  const { trend } = useParams()
+  const apiKey = process.env.REACT_APP_API_KEY
+  const navigate = useNavigate();
+  const [movieName, setMovieName] = useState('batman');
+  // const [error, setError] = useState('');
+  const [movieList, setMovieList] = useState([]);
+
+  const searchMovie = (e) => {
+    e.preventDefault();
+    setMovieName(e.target[0].value);
+    navigate("/search")
+    // setError('')
+
+  }
+  const finId = () => {
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${movieName}`)
+      .then(item => setMovieList(item.data.results))
+      .catch(err => {
+        console.log(err);
+      })
+
+  };
+  useEffect(() => {
+    if (movieName === '') {
+      return
+    }
+    finId()
+  }, [movieName]);
 
   return (
-    <MovieContext.Provider value={{ trend }}>
+    <MovieContext.Provider value={{ searchMovie, movieList }}>
       {props.children}
     </MovieContext.Provider>
   )
