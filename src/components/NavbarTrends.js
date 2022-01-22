@@ -6,6 +6,7 @@ const NavbarTrends = () => {
   const navigate = useNavigate()
   return <>
     <div className='flex px-10 sm:px-20 whitespace-nowrap space-x-10 sm:space-x-20 text-xl text-white  overflow-x-scroll scrollbar-hide sm:justify-evenly scroll-horizon '>
+
       {Object.entries(requests).map(([key, { title, url }]) => {
         return (
           <h2 key={title}
@@ -14,6 +15,7 @@ const NavbarTrends = () => {
           > {title}</h2>
         )
       })}
+
     </div>
   </>;
 };

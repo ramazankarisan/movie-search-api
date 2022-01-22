@@ -11,17 +11,16 @@ const TrendsResults = () => {
 
   function getData() {
     let baseUrl = "https://api.themoviedb.org/3",
-      URL = baseUrl + `${requests[trend].url}`;
-
+      URL = baseUrl + `${requests[trend]?.url || requests.fetchTrending.url}`;
     return axios
-      .get(URL || (baseUrl + requests.fetchTrending.url))
+      .get(URL)
       .then(res => setTrends(res.data.results))
-  }
+  };
+
   useEffect(() => {
     getData()
   }, [trend]);
 
-  console.log(trends);
   return <>
     <div className='my-10 p-10 flex flex-col items-center md:grid md:grid-cols-2 xl:grid-cols-3  '>
       {trends.map(result => <Thumbnail key={result.id} result={result} />)}

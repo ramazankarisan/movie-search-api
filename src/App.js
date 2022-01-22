@@ -14,6 +14,8 @@ function App() {
       <SearchBar />
       <NavbarTrends />
       <Routes>
+        <Route path="/" element={<TrendsResults />} />
+
         <Route path="/:trend" element={<TrendsResults />} />
 
       </Routes>
