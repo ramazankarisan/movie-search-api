@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import MovieState from './context/MovieState';
+import { BrowserRouter } from "react-router-dom"
 
 
 ReactDOM.render(
-  <MovieState>
-    <App />
-  </MovieState>,
+  <BrowserRouter >
+    <MovieState>
+      <App />
+    </MovieState>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

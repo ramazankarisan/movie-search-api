@@ -1,18 +1,24 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import NavbarTrends from './components/NavbarTrends';
 import SearchBar from './components/SearchBar';
+import TrendsResults from './components/TrendsResults';
 
 function App() {
 
   return (
     <>
-      {/* header */}
+
       <Header />
-      {/* searchbar */}
       <SearchBar />
-      {/* trends navbar */}
       <NavbarTrends />
+      <Routes>
+        <Route path="/:trend" element={<TrendsResults />} />
+
+      </Routes>
+
+
       {/* results */}
     </>
   );
