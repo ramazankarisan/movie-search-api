@@ -7,7 +7,7 @@ import MovieContext from './MovieContext';
 const MovieState = (props) => {
   const apiKey = process.env.REACT_APP_API_KEY
   const navigate = useNavigate();
-  const [movieName, setMovieName] = useState('batman');
+  const [movieName, setMovieName] = useState('');
   // const [error, setError] = useState('');
   const [movieList, setMovieList] = useState([]);
 
@@ -34,7 +34,7 @@ const MovieState = (props) => {
   }, [movieName]);
 
   return (
-    <MovieContext.Provider value={{ searchMovie, movieList }}>
+    <MovieContext.Provider value={{ searchMovie, movieList, movieName }}>
       {props.children}
     </MovieContext.Provider>
   )

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
 
   return <>
-    <div className='flex justify-center space-x-5 my-4  '>
+    <div className='flex justify-start sm:justify-center sm:space-x-5 my-4  '>
 
       <div className='flex flex-col justify-center items-center space-y-2 group cursor-pointer '>
         <Link to="/">  <HomeIcon className="w-8 text-white group-hover:animate-bounce" /></Link>
