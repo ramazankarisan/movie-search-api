@@ -14,16 +14,15 @@ function App() {
       <Header />
       <SearchBar />
       <NavbarTrends />
+
       <Routes>
+        {/* to see trending results */}
         <Route path="/" element={<TrendsResults />} />
         <Route path="/:trend" element={<TrendsResults />} />
+        {/* to see search results */}
         <Route path="/search" element={<SearchResults />} />
-
-
       </Routes>
 
-
-      {/* results */}
     </>
   );
 }

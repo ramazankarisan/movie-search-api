@@ -3,6 +3,7 @@ import MovieContext from '../context/MovieContext';
 import Thumbnail from './Thumbnail';
 
 const SearchResults = () => {
+  // movielist contains search results
   const { movieList, movieName, error } = useContext(MovieContext)
 
   return <>

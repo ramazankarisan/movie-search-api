@@ -7,6 +7,7 @@ import MovieContext from './MovieContext';
 const MovieState = (props) => {
   const apiKey = process.env.REACT_APP_API_KEY
   const navigate = useNavigate();
+
   const [movieName, setMovieName] = useState('');
   const [error, setError] = useState('');
   const [movieList, setMovieList] = useState([]);
@@ -22,6 +23,7 @@ const MovieState = (props) => {
 
   }, [theme]);
 
+  //  with this function getting the input value and then saving it to a state, and redirecting to /search route
 
   const searchMovie = (e) => {
     e.preventDefault();
@@ -30,6 +32,8 @@ const MovieState = (props) => {
     setError('')
 
   }
+
+  // gets the searching results
   const finId = () => {
     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${movieName}`)
       .then(item => setMovieList(item.data.results))

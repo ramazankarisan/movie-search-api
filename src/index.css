@@ -5,3 +5,14 @@
 body {
     @apply bg-teal-500  dark:bg-slate-900;
 }
+
+.headerContainer {
+    @apply flex flex-col justify-center items-center space-y-2  cursor-pointer;
+}
+
+.headerText {
+    @apply text-black dark:text-white text-lg font-bold tracking-wider opacity-0 group-hover:opacity-100;
+}
+.headerIcon {
+    @apply w-8 text-black dark:text-white group-hover:animate-bounce;
+}

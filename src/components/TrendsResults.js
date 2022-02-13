@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { requests } from '../API/requests';
+import { requests } from '../api/requests';
 import Thumbnail from './Thumbnail';
 
 const TrendsResults = () => {
   const { trend } = useParams();
   const [trends, setTrends] = useState([]);
 
+  // whenever we click one of the items, it becomes the parameter of the pathname, and according to that paramerter we fetch data from the api and than render it to the page
   function getData() {
     let baseUrl = "https://api.themoviedb.org/3",
       URL = baseUrl + `${requests[trend]?.url || requests.fetchTrending.url}`;
@@ -16,6 +17,7 @@ const TrendsResults = () => {
       .then(res => setTrends(res.data.results))
   };
 
+  // get data according to the changing parameter
   useEffect(() => {
     getData()
   }, [trend]);

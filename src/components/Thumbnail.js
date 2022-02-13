@@ -2,6 +2,8 @@ import { ThumbUpIcon } from '@heroicons/react/outline';
 import React from 'react';
 
 const Thumbnail = ({ result }) => {
+
+  // this component is reused in both search results and trend results to show them
   const BASE_URL = "https://image.tmdb.org/t/p/w500"
   return <>
     <div className=' m-4 group cursor-pointer transition duration-200 ease-in transform sm:hover:scale-105 shadow-xl  hover:shadow-gray-900 dark:hover:shadow-zinc-200 '>
